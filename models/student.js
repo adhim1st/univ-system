@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+const { hash } = require("../helpers/bcryptHelper");
 module.exports = (sequelize, DataTypes) => {
   class Student extends Model {
     fullName() {
@@ -28,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "Student",
     }
   );
+  Student.addHook("beforeCreate", (instance, options) => {
+    let hashed = hash(instance.password);
+    instance.password = hashed;
+  });
 
   return Student;
 };

@@ -6,6 +6,13 @@
     <title>Subject Edit</title>
   </head>
   <body>
+    <ul>
+      <a href="/"><li>Home</li></a>
+      <a href="/students"><li>Student</li></a>
+      <a href="/subjects"><li>Subject</li></a>
+      <a href="/login"><li>Login</li></a>
+      <a href="/profile"><li>Profile</li></a>
+    </ul>
     <form action="/subjects/<%= data.id %>/edit" method="post">
       <label for="subject_name">Subject Name</label>
       <input

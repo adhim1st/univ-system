@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Subject Add</title>
+    <title>Profile</title>
   </head>
   <body>
     <ul>
@@ -13,10 +13,9 @@
       <a href="/login"><li>Login</li></a>
       <a href="/profile"><li>Profile</li></a>
     </ul>
-    <form action="/subjects/add" method="post">
-      <label for="subject_name">Subject Name</label>
-      <input type="text" name="subject_name" /><br />
-      <button type="submit">Submit</button>
-    </form>
+    <% if(fullname){ %>
+    <h3>Halo <%= fullname %></h3>
+    <h4>Umur kamu saat ini <%= countAge(birthyear) %></h4>
+    <% } %>
   </body>
 </html>
