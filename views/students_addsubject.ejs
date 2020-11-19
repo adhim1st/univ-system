@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Add Subject</title>
+  </head>
+  <body>
+    <ul>
+      <a href="/"><li>Home</li></a>
+      <a href="/students"><li>Student</li></a>
+      <a href="/subjects"><li>Subject</li></a>
+      <a href="/login"><li>Login</li></a>
+      <a href="/profile"><li>Profile</li></a>
+    </ul>
+    <h2><%= studentData.fullName() %> </h2>
+    <form action="/students/<%= studentData.id %>/addsubject" method="post">
+      <input name="StudentId" value="<%= studentData.id %> " hidden>
+      <select name="SubjectId">
+        <% for(i=0;i<subjectData.length;i++){ %> 
+        <option value="<%= subjectData[i].id %> "><%= subjectData[i].subject_name %> </option>
+        <% } %> 
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

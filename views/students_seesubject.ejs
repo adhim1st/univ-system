@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Subject</title>
+</head>
+<body>
+  <ul>
+    <a href="/"><li>Home</li></a>
+    <a href="/students"><li>Student</li></a>
+    <a href="/subjects"><li>Subject</li></a>
+    <a href="/login"><li>Login</li></a>
+    <a href="/profile"><li>Profile</li></a>
+  </ul>
+  <h2><%= studentData.fullName() %> </h2>
+  <table border="1">
+    <tr>
+      <td>Subject</td>
+      <td>Status</td>
+      <td>Action</td>
+    </tr>
+    <% for(i=0;i<subjectData.length;i++){ %>
+      <tr>
+        <td><%= subjectData[i].Subject.subject_name %> </td>
+        <td><%= subjectData[i].status %> </td>
+        <td><a href="/students/<%= studentData.id %>/seesubject/<%= subjectData[i].id %>/accept">Accept</a></td>
+      </tr>
+    <% } %> 
+  </table>
+</body>
+</html>
