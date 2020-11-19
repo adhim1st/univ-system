@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students</title>
+  </head>
+  <body>
+    <a href="/students/add">Add Student</a>
+    <table border="1">
+      <tr>
+        <td>Name</td>
+        <td>IPK</td>
+        <td>Birth Year</td>
+        <td>IPK</td>
+        <td>Action</td>
+      </tr>
+      <% for(i=0;i<data.length;i++){ %>
+        <tr>
+          <td><%= data[i].fullName() %> </td>
+          <td><%= data[i].IPK %> </td>
+          <td><%= data[i].birth_year %> </td>
+          <td><%= data[i].IPK %> </td>
+          <td><a href="/students/<%= data[i].id %>/addsubject">Add Subject</a>|
+            <a href="/students/<%= data[i].id %>/seesubject">See Subject</a>|
+            <a href="/students/<%= data[i].id %>/delete">Delete</a></td>
+        </tr>
+      <% } %> 
+    </table>
+  </body>
+</html>

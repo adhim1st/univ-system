@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subjects</title>
+  </head>
+  <body>
+    <a href="/subjects/add">Add Subject</a>
+    <table border="1">
+      <tr>
+        <td>No</td>
+        <td>Subject Name</td>
+        <td>Action</td>
+      </tr>
+      <% for(i=0;i<data.length;i++){ %>
+        <tr>
+          <td><%= i+1 %> </td>
+          <td><%= data[i].subject_name %> </td>
+          <td><a href="/subjects/<%= data[i].id %>/seestudent">See Student</a>|
+            <a href="/subjects/<%= data[i].id %>/edit">Edit</a>|
+            <a href="/subjects/<%= data[i].id %>/delete">Delete</a></td>
+        </tr>
+      <% } %> 
+    </table>
+  </body>
+</html>
