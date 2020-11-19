@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <ul>
+      <a href="/"><li>Home</li></a>
+      <a href="/students"><li>Student</li></a>
+      <a href="/subjects"><li>Subject</li></a>
+      <a href="/login"><li>Login</li></a>
+      <a href="/profile"><li>Profile</li></a>
+    </ul>
+    <% if(fullname){ %>
+    <h3>Halo <%= fullname %></h3>
+    <h4>Umur kamu saat ini <%= countAge(birthyear) %></h4>
+    <% } %>
+  </body>
+</html>
