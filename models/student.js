@@ -17,12 +17,57 @@ module.exports = (sequelize, DataTypes) => {
   }
   Student.init(
     {
-      user_name: DataTypes.STRING,
-      password: DataTypes.STRING,
-      first_name: DataTypes.STRING,
-      last_name: DataTypes.STRING,
+      user_name: {
+        type: DataTypes.STRING,
+        validate: {
+          isUserEmpty(value) {
+            if (value == "") {
+              throw new Error("Username required");
+            }
+          },
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+        validate: {
+          isPassEmpty(value) {
+            if (value == "" || value.length < 8) {
+              throw new Error("Password required, minimum 8 character");
+            }
+          },
+        },
+      },
+      first_name: {
+        type: DataTypes.STRING,
+        validate: {
+          isFNameEmpty(value) {
+            if (value == "") {
+              throw new Error("First Name required");
+            }
+          },
+        },
+      },
+      last_name: {
+        type: DataTypes.STRING,
+        validate: {
+          isLNameEmpty(value) {
+            if (value == "") {
+              throw new Error("Last Name required");
+            }
+          },
+        },
+      },
       IPK: DataTypes.INTEGER,
-      birth_year: DataTypes.INTEGER,
+      birth_year: {
+        type: DataTypes.INTEGER,
+        validate: {
+          isUserEmpty(value) {
+            if (value == "") {
+              throw new Error("Birth Year required");
+            }
+          },
+        },
+      },
     },
     {
       sequelize,
