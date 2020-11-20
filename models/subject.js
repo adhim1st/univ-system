@@ -13,7 +13,16 @@ module.exports = (sequelize, DataTypes) => {
   }
   Subject.init(
     {
-      subject_name: DataTypes.STRING,
+      subject_name: {
+        type: DataTypes.STRING,
+        validate: {
+          isSubjectEmpty(value) {
+            if (value == "") {
+              throw new Error("Subject Name required");
+            }
+          },
+        },
+      },
       score: DataTypes.INTEGER,
     },
     {
