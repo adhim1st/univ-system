@@ -28,7 +28,12 @@ class StudentController {
         res.redirect("/students");
       })
       .catch((err) => {
-        res.send(err);
+        let errmes = "";
+        for (let i = 0; i < err.errors.length; i++) {
+          errmes += err.errors[i].message;
+          errmes += ", ";
+        }
+        res.send(errmes);
       });
   }
 
